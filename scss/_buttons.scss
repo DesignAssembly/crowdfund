@@ -1,0 +1,53 @@
+
+.btn {
+
+    font-size: .875rem;
+    font-family: var(--base-font);
+    font-weight: var(--font-weight-bold);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--cyan);
+    padding: .969rem 2rem;
+    cursor: pointer;
+
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+        background-color: var(--cyan-dark);
+    }
+
+    &--lg {
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 1.125rem 2.85rem;   
+
+        @include respondto(medium) {
+            padding: 1.125rem 2.5rem;
+        }
+    }
+
+    &:disabled {
+        background: var(--btn-disabled);
+        cursor:auto;
+    }
+}
+
+.ctas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respondto(medium) {
+        padding-top: .6rem;
+    }
+}
+
+//thank you override btn
+
+.btn-thank-you {
+    position: relative;
+    background: var(--cyan);
+    top: auto;
+    right: auto;
+}

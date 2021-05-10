@@ -1,0 +1,84 @@
+
+
+.nav {
+
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,.4);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 5rem 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-in-out;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+
+        .menu {
+            transform: translateY(0);
+        }
+    }
+
+    @include respondto(medium) {
+        opacity: 1;
+        visibility: visible;
+        background: transparent;
+        position: relative;
+        width: auto;
+        padding: 0;
+        height: auto;
+    }
+}
+
+.menu {
+    background: white ;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: .5rem;
+    transform: translateY(-40px);
+    transition: all .4s ease-in-out;
+
+    @include respondto(medium) {
+        background: transparent;
+        flex-direction: row;
+        transform: none;
+        width: auto;
+    }
+
+    &__item + &__item {
+        border-top: 1px solid var(--border-dark);
+
+        @include respondto(medium) {
+            border-top: 0;
+            margin-left: 2rem;
+        }
+    }
+
+    &__link {
+        padding: 1.5rem;
+        display: block;
+        text-decoration: none;
+        color: var(--black);
+        font-size: 1.15rem;
+        font-weight: var(--font-weight-med);
+
+        @include respondto(medium) {
+           padding: 0;
+           color: white;
+           font-size: .825rem;
+        }
+    }
+}
+
+
+.nav__trigger {
+    position: relative;
+    z-index: 5;
+    @include respondto(medium) {
+        display: none;
+    }
+    
+}

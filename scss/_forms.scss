@@ -1,0 +1,156 @@
+input[type="number"], input[type="text"] {
+    border: 1px solid var(--border-dark);
+    border-radius: 50px;
+    height: 48px;
+    padding: .5rem 1rem;
+    width: 6rem;
+    font-size: .815rem;
+}
+
+input[type="radio"] {
+    
+}
+
+label {
+    font-weight: var(--font-weight-bold);
+    color: var(--black);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--cyan);
+    }
+}
+
+// bookmark checkbox
+
+
+.checkbox-custom {
+
+    position: relative;
+
+    input {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+    }
+
+    label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 56px;
+        width: 56px;
+        z-index: 2;
+        overflow: hidden;
+        border-radius: 100px;
+
+        
+        .bookmark-icon {
+            position: absolute;
+            left: 0;
+        }
+
+        .bookmark-text {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @include respondto(medium) {
+            overflow: visible;
+            background: #f4f4f4;
+            width: auto;
+            padding-left: 72px;
+            padding-right: 24px;
+
+            .bookmark-text {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    input:checked + label {
+        svg {
+            circle {
+                fill: var(--cyan-dark);
+            }
+            path {
+                fill: white;
+            }  
+        }
+
+        color: var(--cyan-dark);
+    }
+}
+
+// Custom Radio Button
+
+.pledge-label {
+    display: block;
+    position: relative;
+    padding-left: 38px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    @include respondto(medium) {
+        padding-left: 48px;
+        font-size: 17px;
+    }
+  }
+  
+
+  .pledge-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid var(--border-dark);
+  }
+  
+  .pledge-label:hover input ~ .checkmark {
+    background-color: #eee;
+  }
+  
+  .pledge-label input:checked ~ .checkmark {
+    background-color: #fff;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .pledge-label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .pledge-label .checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--cyan);
+  }
+
+  .card-modal__text {
+
+    @include respondto(medium) {
+      padding-left: 48px;
+    }
+  }
